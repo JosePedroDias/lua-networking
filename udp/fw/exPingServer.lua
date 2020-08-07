@@ -1,4 +1,4 @@
-local generateServer = require("udpserver")
+local generateServer = require("UdpServer")
 
 local pingInterval = 5
 local maxAllowedPing = 0.5
@@ -14,7 +14,7 @@ generateServer({
   port = 52225,
   fps = 120,
   -- debug = true,
-  update = function(t)
+  onUpdate = function(t)
     if lastPingEndT and t > lastPingEndT then
       local clients = srv.getClients()
 

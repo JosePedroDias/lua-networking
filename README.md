@@ -15,6 +15,11 @@ A set of small apps to solve gamedev networking scenarios. WIP!
 
 ### udp
 
+- very raw server and client
+- fw has a modularized server (UdpServer) and example pairs:
+  - ping
+  - tic tac toe
+
 ### udp hole punching
 
 TODO
