@@ -20,6 +20,14 @@ local function broadcast(data)
     end
 end
 
+local function broadcastExcept(data, exceptIp, exceptPort)
+    for _, pair in pairs(clients) do
+        if pair[1] ~= exceptIp or pair[2] ~= exceptPort then
+            udp:sendto(data, pair[1], pair[2])
+        end
+    end
+end
+
 local function onSignal()
     running = false
 end
@@ -40,7 +48,8 @@ while running do
     if data then
         print("server: received [" .. data .. '] from ' .. clientId)
         -- udp:sendto(data, msg_or_ip, port_or_nil) -- echo
-        broadcast(data)
+        -- broadcast(data)
+        broadcastExcept(data, msg_or_ip, port_or_nil)
     elseif msg_or_ip ~= "timeout" then
         error("server: network error - " .. tostring(msg_or_ip))
     end
