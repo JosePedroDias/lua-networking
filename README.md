@@ -4,6 +4,8 @@ A set of small apps to solve gamedev networking scenarios. WIP!
 
 ## setup
 
+### osx dev to run on love2d (where lua is 5.1)
+
     eval (luarocks --lua-dir=/usr/local/opt/lua@5.1 path --bin)
     luarocks --lua-dir=/usr/local/opt/lua@5.1 install luasocket
     luarocks --lua-dir=/usr/local/opt/lua@5.1 install luaposix
@@ -12,6 +14,14 @@ A set of small apps to solve gamedev networking scenarios. WIP!
 
     lua5.1 server.lua
     lua5.1 client.lua
+
+# linux dev to run just the server
+
+    apt install luarocks
+    luarocks install luasocket
+    luarocks install luaposix
+    apt install libenet-dev
+    luarocks install enet
 
 ## scenarios
 

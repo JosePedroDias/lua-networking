@@ -1,4 +1,4 @@
-local generateServer = require("UdpServerEnet") -- UdpServer / UdpServerEnet
+local generateServer = require("EnetServer") -- UdpServer / EnetServer
 local ttt = require("exTicTacToe")
 
 local srv = {}

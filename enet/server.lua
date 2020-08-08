@@ -1,7 +1,7 @@
 -- https://leafo.net/lua-enet/
 local enet = require "enet"
 
-local host = enet.host_create("localhost:6789")
+local host = enet.host_create("*:6789")
 
 while true do
   local event = host:service(100)
